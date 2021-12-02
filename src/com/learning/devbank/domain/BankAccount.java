@@ -1,6 +1,6 @@
 package com.learning.devbank.domain;
 
-public class BankAccount {
+public class BankAccount implements BankAccountDeposit, BankAccountWithdraw {
     private int agency;
     private int number;
     private double balance;
@@ -45,13 +45,10 @@ public class BankAccount {
         this.balance += value;
     }
 
-    public String withdraw(double value) {
+    public void withdraw(double value) {
         if (value <= this.balance) {
             this.balance -= value;
-            return "Saque conlcluído com sucesso";
         }
-
-        return "Saldo insuficiente para efetuar o saque";
     }
 
     public double retrieveAccountBalance() {

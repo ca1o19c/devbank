@@ -22,22 +22,18 @@ public class BankAccountTest {
     public void shouldAccountWithdraw() {
         var mock = BankAccountMock.aMock();
 
-        var response = mock.withdraw(8900);
-
-        Assert.assertEquals(response, "Saque conlcluído com sucesso");
+        mock.withdraw(900);
 
         var balance = mock.getBalance();
 
-        Assert.assertEquals(balance, 0);
+        Assert.assertEquals(balance, 8000);
     }
 
     @Test
     public void shouldNotAccountWithdraw() {
         var mock = BankAccountMock.aMock();
 
-        var response = mock.withdraw(10000);
-
-        Assert.assertEquals(response, "Saldo insuficiente para efetuar o saque");
+        mock.withdraw(10000);
 
         var balance = mock.getBalance();
 
