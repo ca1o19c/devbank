@@ -1,10 +1,8 @@
-package com.learning.devbank.tests;
+import domain.BankAccount;
+import mock.BankAccountMock;
+import org.junit.Test;
 
-import com.learning.devbank.domain.BankAccount;
-import com.learning.devbank.tests.mock.BankAccountMock;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BankAccountTest {
 
@@ -12,11 +10,13 @@ public class BankAccountTest {
     public void shouldAccountDeposit() {
         var mock = BankAccountMock.aMock();
 
-        assertEquals(mock.getBalance(), 8900);
+        assertThat(mock.getBalance())
+                .isEqualTo(8900);
 
         mock.deposit(120);
 
-        assertEquals(mock.getBalance(), 9020);
+        assertThat(mock.getBalance())
+                .isEqualTo(9020);
     }
 
     @Test
@@ -27,7 +27,8 @@ public class BankAccountTest {
 
         var balance = mock.getBalance();
 
-        assertEquals(balance, 8000);
+        assertThat(balance)
+                .isEqualTo(8000);
     }
 
     @Test
@@ -38,7 +39,8 @@ public class BankAccountTest {
 
         var balance = mock.getBalance();
 
-        assertEquals(balance, 8900);
+        assertThat(balance)
+                .isEqualTo(8900);
     }
 
     @Test
@@ -47,7 +49,8 @@ public class BankAccountTest {
 
         var balance = mock.retrieveAccountBalance();
 
-        assertEquals(balance, 8900);
+        assertThat(balance)
+                .isEqualTo(8900);
     }
 
     @Test
@@ -56,6 +59,7 @@ public class BankAccountTest {
 
         var balance = bankAccount.getBalance();
 
-        assertEquals(balance, 0.0);
+        assertThat(balance)
+                .isEqualTo(0.0);
     }
 }

@@ -1,4 +1,4 @@
-package com.learning.devbank.domain;
+package domain;
 
 public interface BankAccountDeposit {
     /**

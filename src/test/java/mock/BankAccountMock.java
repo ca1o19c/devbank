@@ -1,6 +1,7 @@
-package com.learning.devbank.tests.mock;
+package mock;
 
-import com.learning.devbank.domain.BankAccount;
+
+import domain.BankAccount;
 
 public class BankAccountMock {
     public static BankAccount aMock() {
