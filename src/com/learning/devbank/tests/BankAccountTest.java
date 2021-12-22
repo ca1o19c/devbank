@@ -3,7 +3,8 @@ package com.learning.devbank.tests;
 import com.learning.devbank.domain.BankAccount;
 import com.learning.devbank.tests.mock.BankAccountMock;
 import org.junit.jupiter.api.Test;
-import org.testng.Assert;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BankAccountTest {
 
@@ -11,11 +12,11 @@ public class BankAccountTest {
     public void shouldAccountDeposit() {
         var mock = BankAccountMock.aMock();
 
-        Assert.assertEquals(mock.getBalance(), 8900);
+        assertEquals(mock.getBalance(), 8900);
 
         mock.deposit(120);
 
-        Assert.assertEquals(mock.getBalance(), 9020);
+        assertEquals(mock.getBalance(), 9020);
     }
 
     @Test
@@ -26,7 +27,7 @@ public class BankAccountTest {
 
         var balance = mock.getBalance();
 
-        Assert.assertEquals(balance, 8000);
+        assertEquals(balance, 8000);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class BankAccountTest {
 
         var balance = mock.getBalance();
 
-        Assert.assertEquals(balance, 8900);
+        assertEquals(balance, 8900);
     }
 
     @Test
@@ -46,7 +47,7 @@ public class BankAccountTest {
 
         var balance = mock.retrieveAccountBalance();
 
-        Assert.assertEquals(balance, 8900);
+        assertEquals(balance, 8900);
     }
 
     @Test
@@ -55,6 +56,6 @@ public class BankAccountTest {
 
         var balance = bankAccount.getBalance();
 
-        Assert.assertEquals(balance, 0.0);
+        assertEquals(balance, 0.0);
     }
 }
